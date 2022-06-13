@@ -1,7 +1,7 @@
 {
-   "name": "pwa-nate",
-   "short_name": "pwa-nick",
-   "description": "nate nick",
+   "name": "pwa-demo1-name",
+   "short_name": "pwa-demo1-short_nate",
+   "description": "paw-demo1-description",
    "start_url": "/pwa-demo1/",
    "background_color": "#000000",
    "theme_color": "#0f4a73",
