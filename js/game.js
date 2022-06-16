@@ -42,6 +42,16 @@ function create() {
     e.preventDefault();
     self.deferredPrompt = e;
   });
+
+  window.addEventListener('appinstalled', function () {
+    console.log('应用已安装');
+  });
+
+  window.onappinstalled = function (ev) {
+    console.log('The application was installed.');
+  };
+
+
   self.text = this.add.text(1024, 100, '下载', { fontFamily: 'Arial', fontSize: 64, color: '#00ff00' })
     .setOrigin(1, 0.5).setInteractive({ useHandCursor: true }).on('pointerup', function () {
       var x;
@@ -63,7 +73,13 @@ function create() {
     });
 }
 
+var flag = false;
 function update() {
   const self = this;
-  if (self.deferredPrompt != undefined) self.text.setVisible(true);
+  if (self.deferredPrompt != undefined && !flag) {
+    flag = true;
+    setTimeout(function () {
+      self.text.setVisible(true);
+    }, 2000);
+  }
 }
